@@ -1,0 +1,111 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Make DaaL Debug",
+            "type": "shell",
+            "command": "./dev/vscode/make_task_wrapper.sh",
+            "args": [
+                "-j", "daal", "REQDBG=True", "COMPILER=icc"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}",
+                "env": {
+                    "CURRENT_COMPILER": "icc"
+                }
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            }
+        },
+        {
+            "label": "Make CleanAll",
+            "type": "shell",
+            "command": "./dev/vscode/make_task_wrapper.sh",
+            "args": [
+                "cleanall", "COMPILER=icc"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}",
+                "env": {
+                    "CURRENT_COMPILER": "icc"
+                }
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            }
+        },
+        {
+            "label": "Make DaaL Debug GNU",
+            "type": "shell",
+            "command": "./dev/vscode/make_task_wrapper.sh",
+            "args": [
+                "-j", "daal", "REQDBG=True", "COMPILER=gnu"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}",
+                "env": {
+                    "CURRENT_COMPILER": "gnu"
+                }
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            }
+        },
+        {
+            "label": "Make CleanAll GNU",
+            "type": "shell",
+            "command": "./dev/vscode/make_task_wrapper.sh",
+            "args": [
+                "cleanall", "COMPILER=gnu"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}",
+                "env": {
+                    "CURRENT_COMPILER": "gnu"
+                }
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            }
+        }
+    ]
+}

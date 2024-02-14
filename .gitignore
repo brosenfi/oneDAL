@@ -12,9 +12,6 @@ __deps*
 # Bazel directories
 bazel-*
 
-# Visual Studio related files, e.g., ".vscode"
-.vs*
-
 # Bazel directories
 bazel-*
 

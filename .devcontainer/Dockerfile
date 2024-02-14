@@ -1,4 +1,3 @@
-#!/bin/bash
 #===============================================================================
 # Copyright 2023 Intel Corporation
 #
@@ -15,12 +14,4 @@
 # limitations under the License.
 #===============================================================================
 
-sudo apt-get -y update
-sudo apt-get -y install build-essential gcc gfortran
-git clone https://github.com/xianyi/OpenBLAS.git
-CoreCount=$(lscpu -p | grep -Ev '^#' | wc -l)
-pushd OpenBLAS
-  make clean
-  make -j${CoreCount} NO_FORTRAN=1
-  make install PREFIX=../__deps/open_blas
-popd
+FROM mcr.microsoft.com/devcontainers/base:jammy

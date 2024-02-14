@@ -1,0 +1,46 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/cpp
+{
+	"name": "onedal_dev_container",
+	"build": {
+		"dockerfile": "Dockerfile",
+		"context": ".."
+	},
+
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"python.terminal.activateEnvironment": true,
+				"python.terminal.activateEnvInCurrentTerminal": true,
+				"python.pythonPath": "/opt/conda/bin/python"
+			},
+			"extensions": [
+				"ms-vscode.cpptools",
+				"vadimcn.vscode-lldb",
+				"ms-python.python",
+				"ms-python.vscode-pylance",
+				"benjamin-simmonds.pythoncpp-debug",
+				"charliemarsh.ruff"
+			]
+		}
+	},
+
+	"runArgs": [
+		"--privileged"
+	],
+
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	// "features": {},
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	"postCreateCommand": "./dev/vscode/post_create_script.sh"
+
+	// Configure tool-specific properties.
+	// "customizations": {},
+
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
+}
