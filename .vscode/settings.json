@@ -1,2 +1,4 @@
 {
+    // Set the make compiler used for vscode tasks - can be "icc", "icx", "gnu", "clang", etc.
+    "CURRENT_COMPILER": "gnu"
 }

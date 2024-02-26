@@ -8,12 +8,12 @@
             "type": "shell",
             "command": "./dev/vscode/make_task_wrapper.sh",
             "args": [
-                "-j", "daal", "REQDBG=True", "COMPILER=icc"
+                "-j", "daal", "REQDBG=True", "COMPILER=${config:CURRENT_COMPILER}"
             ],
             "options": {
                 "cwd": "${workspaceFolder}",
                 "env": {
-                    "CURRENT_COMPILER": "icc"
+                    "CURRENT_COMPILER": "${config:CURRENT_COMPILER}"
                 }
             },
             "group": {
@@ -34,12 +34,12 @@
             "type": "shell",
             "command": "./dev/vscode/make_task_wrapper.sh",
             "args": [
-                "cleanall", "COMPILER=icc"
+                "cleanall", "COMPILER=${config:CURRENT_COMPILER}"
             ],
             "options": {
                 "cwd": "${workspaceFolder}",
                 "env": {
-                    "CURRENT_COMPILER": "icc"
+                    "CURRENT_COMPILER": "${config:CURRENT_COMPILER}"
                 }
             },
             "group": {
@@ -56,42 +56,16 @@
             }
         },
         {
-            "label": "Make DaaL Debug GNU",
+            "label": "Build daal4py",
             "type": "shell",
-            "command": "./dev/vscode/make_task_wrapper.sh",
+            "command": "./dev/vscode/build_daal4py.sh",
             "args": [
-                "-j", "daal", "REQDBG=True", "COMPILER=gnu"
+                "cleanall", "COMPILER=${config:CURRENT_COMPILER}"
             ],
             "options": {
                 "cwd": "${workspaceFolder}",
                 "env": {
-                    "CURRENT_COMPILER": "gnu"
-                }
-            },
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            },
-            "presentation": {
-                "echo": true,
-                "reveal": "always",
-                "focus": false,
-                "panel": "shared",
-                "showReuseMessage": true,
-                "clear": false
-            }
-        },
-        {
-            "label": "Make CleanAll GNU",
-            "type": "shell",
-            "command": "./dev/vscode/make_task_wrapper.sh",
-            "args": [
-                "cleanall", "COMPILER=gnu"
-            ],
-            "options": {
-                "cwd": "${workspaceFolder}",
-                "env": {
-                    "CURRENT_COMPILER": "gnu"
+                    "CURRENT_COMPILER": "${config:CURRENT_COMPILER}"
                 }
             },
             "group": {

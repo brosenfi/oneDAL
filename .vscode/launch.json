@@ -1,0 +1,42 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "SKLearn Python: Debug Tests",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "purpose": [
+                "debug-test"
+            ],
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "redirectOutput": false,
+            "preLaunchTask": "source_debug_env"
+        },
+        {
+            "name": "python_current_file",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "envFile": "${workspaceFolder}/.env",
+            "env": {
+                "CURRENT_COMPILER": "${config:CURRENT_COMPILER}"
+            }
+        },
+        {
+            "name": "gdb_attach_python",
+            "type": "cppdbg",
+            "request": "attach"
+        },
+        {
+            "name": "Python C++ Debug",
+            "type": "pythoncpp",
+            "request": "launch",
+            "pythonLaunchName": "python_current_file",
+            "cppAttachName": "gdb_attach_python"
+        }
+    ]
+}

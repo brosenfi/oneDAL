@@ -4,5 +4,10 @@
 		  "path": "."
 		}
 	],
-	"settings": {}
+	"settings": {
+		"terminal.integrated.env.linux": {
+			"WORKSPACE_FOLDER": "${workspaceFolder}",
+			"CURRENT_COMPILER": "${config:CURRENT_COMPILER}"
+		}
+	}
 }

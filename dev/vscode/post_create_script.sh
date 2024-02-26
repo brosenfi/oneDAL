@@ -45,3 +45,6 @@ conda init
 sudo bash -c ". /opt/conda/etc/profile.d/conda.sh \
 	&& conda activate base \
 	&& conda install -y conda-forge::mpi4py"
+
+echo "" >> ~/.bashrc
+echo '. ${WORKSPACE_FOLDER:-/workspaces/oneDAL}/dev/vscode/source_debug_env.sh' >> ~/.bashrc
